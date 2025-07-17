@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wasicash - Instalación</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1 class="logo">WasiCash</h1>
+      <nav>
+        <a href="#resumen">Resumen</a>
+        <a href="#pasos">Instalación</a>
+        <a href="#comentarios">Comentarios</a>
+      </nav>
+    </div>
+  </header>
+  <main class="container">
+    <section id="resumen" class="card">
+      <h2>¿Cómo surgió Wasicash?</h2>
+      <p>Wasicash nació, debido a la necesidad en un negocio donde se necesitaba validar el YAPE o PLIN ya que el Celular donde se encontraba instalado solo tenia el DUEÑO de negocio, para avitar frudes al momento de realizar un pago por unas de estas billeteras electronicas</p>
+    </section>
+    <section id="pasos" class="card">
+      <h2>Paso a paso para instalar la aplicación</h2>
+      <ol class="steps">
+        <li>
+          <strong>Paso 1:</strong> Descarga la aplicación <a href="descargas/WasiCash.apk" download>Aquí</a>.<br>
+        <p></p>
+        </li>
+        <li>
+          <strong>Paso 2:</strong> Desactova google play protect.<br>
+          <img src="images/paso2.png" alt="Imagen paso 2" class="step-img"/>
+        </li>
+        <li>
+          <strong>Paso 3:</strong> Brindar permisos para poder enviar sms y leer notificaciones<br>
+          <img src="images/paso3.png" alt="Imagen paso 3" class="step-img"/>
+        </li>
+      </ol>
+    </section>
+    <section id="comentarios" class="card">
+      <h2>Deja tu comentario, como se podria mejorar la aplicación</h2>
+      <form id="comentario-form">
+        <input type="text" id="nombre" placeholder="Tu nombre" required />
+        <textarea id="mensaje" placeholder="Escribe tu comentario" required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+      <ul id="lista-comentarios"></ul>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 Wasicash</p>
+    </div>
+  </footer>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+  <script>
+    const firebaseConfig = {
+        apiKey: "AIzaSyA8n9xzWmE8D6nkcKGZR20wK2svuImleww",
+        authDomain: "wasicash-comentarios.firebaseapp.com",
+        databaseURL: "https://wasicash-comentarios-default-rtdb.firebaseio.com",
+        projectId: "wasicash-comentarios",
+        storageBucket: "wasicash-comentarios.firebasestorage.app",
+        messagingSenderId: "604186292458",
+        appId: "1:604186292458:web:4930059c07ccbb19fe2793",
+        measurementId: "G-7B181THR7T"
+    };
+    firebase.initializeApp(firebaseConfig);
+  </script>
+  <script src="script.js"></script>
+</body>
+</html> 

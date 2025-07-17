@@ -1,0 +1,204 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+  background: #f6f8fa;
+  color: #24292f;
+  min-height: 100vh;
+}
+.header {
+  background: #24292f;
+  color: #fff;
+  padding: 1rem 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  transition: box-shadow 0.3s;
+}
+.header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: #58a6ff;
+  text-shadow: 0 2px 8px rgba(88,166,255,0.08);
+}
+.header nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: color 0.2s, border-bottom 0.2s;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 2px;
+}
+.header nav a:hover {
+  color: #58a6ff;
+  border-bottom: 2px solid #58a6ff;
+}
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 6.5rem 1rem 1.5rem 1rem;
+}
+.card {
+  background: #fff;
+  border: 1px solid #d0d7de;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(27,31,35,0.07);
+  margin-bottom: 2rem;
+  padding: 2rem 1.5rem;
+  transition: box-shadow 0.2s, transform 0.2s;
+  position: relative;
+}
+.card:hover {
+  box-shadow: 0 6px 24px rgba(88,166,255,0.13);
+  transform: translateY(-2px) scale(1.01);
+}
+.card h2 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  color: #2da44e;
+}
+.steps {
+  list-style: decimal inside;
+  padding-left: 0;
+}
+.step-img {
+  display: block;
+  margin: 0.5rem 0 1rem 0;
+  max-width: 100%;
+  border: 1px solid #d0d7de;
+  border-radius: 8px;
+  background: #f6f8fa;
+  min-height: 80px;
+  box-shadow: 0 1px 4px rgba(88,166,255,0.07);
+  transition: box-shadow 0.2s;
+}
+#comentario-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  margin-bottom: 1.5rem;
+}
+#comentario-form input,
+#comentario-form textarea {
+  padding: 0.9rem;
+  border: 1.5px solid #d0d7de;
+  border-radius: 6px;
+  font-size: 1.08rem;
+  background: #f6f8fa;
+  transition: border 0.2s, box-shadow 0.2s;
+  outline: none;
+  resize: vertical;
+}
+#comentario-form input:focus,
+#comentario-form textarea:focus {
+  border: 1.5px solid #58a6ff;
+  box-shadow: 0 0 0 2px #58a6ff33;
+}
+#comentario-form button {
+  background: linear-gradient(90deg, #2da44e 60%, #58a6ff 100%);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.9rem;
+  font-size: 1.08rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  box-shadow: 0 2px 8px rgba(88,166,255,0.07);
+}
+#comentario-form button:hover {
+  background: linear-gradient(90deg, #218838 60%, #1b6ac6 100%);
+  transform: scale(1.03);
+}
+#lista-comentarios {
+  list-style: none;
+  padding: 0;
+}
+.comentario-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  border-bottom: 1px solid #d0d7de;
+  padding: 1rem 0;
+  opacity: 0;
+  animation: fadeIn 0.7s forwards;
+}
+#lista-comentarios li:last-child {
+  border-bottom: none;
+}
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #58a6ff 60%, #2da44e 100%);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  box-shadow: 0 2px 8px rgba(88,166,255,0.13);
+  user-select: none;
+}
+.comentario-contenido {
+  flex: 1;
+}
+.comentario-nombre {
+  font-weight: 600;
+  color: #2da44e;
+  margin-bottom: 0.2rem;
+}
+.comentario-mensaje {
+  margin: 0;
+  color: #24292f;
+  font-size: 1.05rem;
+}
+.footer {
+  background: #24292f;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.95rem;
+  margin-top: 2rem;
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.07);
+}
+@media (max-width: 600px) {
+  .header .container, .container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+  .header nav {
+    margin-top: 0.7rem;
+  }
+  .card {
+    padding: 1rem;
+  }
+  .logo {
+    font-size: 1.3rem;
+  }
+  .card h2 {
+    font-size: 1.1rem;
+  }
+  .avatar {
+    width: 32px;
+    height: 32px;
+    font-size: 1rem;
+  }
+}
+@keyframes fadeIn {
+  to { opacity: 1; }
+} 
