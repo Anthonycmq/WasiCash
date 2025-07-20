@@ -44,4 +44,19 @@ form.addEventListener('submit', function(e) {
   form.reset();
 });
 
-document.addEventListener('DOMContentLoaded', cargarComentarios); 
+document.addEventListener('DOMContentLoaded', cargarComentarios);
+
+// Contador de clics en descarga y captura de datos del usuario
+const enlaceDescarga = document.getElementById('descarga-apk');
+if (enlaceDescarga) {
+  enlaceDescarga.addEventListener('click', function() {
+    // Datos que se pueden capturar sin servicios externos
+    const datosUsuario = {
+      userAgent: navigator.userAgent,
+      idioma: navigator.language,
+      plataforma: navigator.platform,
+      hora: new Date().toISOString(),
+    };
+    db.ref('descargas').push(datosUsuario);
+  });
+} 
