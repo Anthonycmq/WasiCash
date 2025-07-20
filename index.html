@@ -9,8 +9,13 @@
 <body>
   <header class="header">
     <div class="container">
+      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
       <h1 class="logo">WasiCash</h1>
-      <nav>
+      <nav id="main-nav" class="nav-collapsed">
         <a href="#resumen">Resumen</a>
         <a href="#pasos">Instalación</a>
         <a href="#comentarios">Comentarios</a>
@@ -81,5 +86,33 @@
     firebase.initializeApp(firebaseConfig);
   </script>
   <script src="script.js"></script>
+  <script>
+    // Menú hamburguesa para móviles
+    const menuToggle = document.getElementById('menu-toggle');
+    const mainNav = document.getElementById('main-nav');
+    function closeMenu() {
+      mainNav.classList.add('nav-collapsed');
+      mainNav.classList.remove('nav-open');
+    }
+    menuToggle.addEventListener('click', function() {
+      mainNav.classList.toggle('nav-collapsed');
+      mainNav.classList.toggle('nav-open');
+    });
+    // Cerrar menú al hacer clic en un enlace
+    mainNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', (e) => {
+        closeMenu();
+        setTimeout(() => {
+          const href = link.getAttribute('href');
+          if (href && href.startsWith('#')) {
+            const target = document.querySelector(href);
+            if (target) {
+              target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+          }
+        }, 200);
+      });
+    });
+  </script>
 </body>
 </html> 
