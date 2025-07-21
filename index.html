@@ -74,14 +74,14 @@
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
   <script>
     const firebaseConfig = {
-        apiKey: "${{ env.APIKEY }}",
+        apiKey: "${{ vars.APIKEY }}",
         authDomain: "${{ AUTH_DOMAIN }}",
-        databaseURL: "${{ env.URL_DATABASE }}",
+        databaseURL: "${{ vars.URL_DATABASE }}",
         projectId: "${{ envPROYET_ID }}",
-        storageBucket: "${{ env.STORE_BUCKET }}",
-        messagingSenderId: "${{ env.MESSAGING_SEND }}",
-        appId: "${{ env.APP_ID }}",
-        measurementId: "${{ env.MEASURE }}"
+        storageBucket: "${{ vars.STORE_BUCKET }}",
+        messagingSenderId: "${{ vars.MESSAGING_SEND }}",
+        appId: "${{ vars.APP_ID }}",
+        measurementId: "${{ vars.MEASURE }}"
     };
     firebase.initializeApp(firebaseConfig);
   </script>
