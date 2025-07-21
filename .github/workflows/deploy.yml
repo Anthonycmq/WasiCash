@@ -1,0 +1,11 @@
+
+      - name: Replace env variables in index.html
+        run: |
+          sed -i 's|\${{ env.APIKEY }}|${{ secrets.APIKEY }}|g' index.html
+          sed -i 's|\${{ AUTH_DOMAIN }}|${{ secrets.AUTH_DOMAIN }}|g' index.html
+          sed -i 's|\${{ env.URL_DATABASE }}|${{ secrets.URL_DATABASE }}|g' index.html
+          sed -i 's|\${{ envPROYET_ID }}|${{ secrets.PROYET_ID }}|g' index.html
+          sed -i 's|\${{ env.STORE_BUCKET }}|${{ secrets.STORE_BUCKET }}|g' index.html
+          sed -i 's|\${{ env.MESSAGING_SEND }}|${{ secrets.MESSAGING_SEND }}|g' index.html
+          sed -i 's|\${{ env.APP_ID }}|${{ secrets.APP_ID }}|g' index.html
+          sed -i 's|\${{ env.MEASURE }}|${{ secrets.MEASURE }}|g' index.html
