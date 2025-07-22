@@ -46,11 +46,9 @@ form.addEventListener('submit', function(e) {
 
 document.addEventListener('DOMContentLoaded', cargarComentarios);
 
-// Contador de clics en descarga y captura de datos del usuario
 const enlaceDescarga = document.getElementById('descarga-apk');
 if (enlaceDescarga) {
   enlaceDescarga.addEventListener('click', function() {
-    // Datos que se pueden capturar sin servicios externos
     const datosUsuario = {
       userAgent: navigator.userAgent,
       idioma: navigator.language,
